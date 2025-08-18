@@ -1,0 +1,419 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Arena39 — Toko Laptop & Aksesoris</title>
+  <meta name="description" content="Arena39: Toko laptop terpercaya untuk kerja, kuliah, dan gaming. Garansi resmi, konsultasi gratis, dan pengiriman cepat." />
+  <meta name="theme-color" content="#0ea5e9" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='0.9em' font-size='90'%3E💻%3C/text%3E%3C/svg%3E">
+  <style>
+    :root{
+      --bg:#0b1220;           /* background */
+      --card:#111827;         /* card */
+      --muted:#6b7280;        /* muted text */
+      --text:#e5e7eb;         /* primary text */
+      --brand:#0ea5e9;        /* sky-500 */
+      --brand-2:#22d3ee;      /* cyan-400 */
+      --ok:#10b981;           /* emerald */
+      --warn:#f59e0b;         /* amber */
+      --danger:#ef4444;       /* red */
+      --radius:16px;
+      --shadow:0 10px 30px rgba(2,6,23,.35);
+      --max:1200px;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;height:100%;}
+    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,Helvetica,sans-serif;background:linear-gradient(180deg,#0b1220, #0b1220 50%, #0c1426 100%);color:var(--text);}
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+    .container{max-width:var(--max);margin-inline:auto;padding:0 20px}
+
+    /* Header */
+    header{position:sticky;top:0;z-index:50;background:rgba(11,18,32,.7);backdrop-filter:saturate(150%) blur(12px);border-bottom:1px solid rgba(255,255,255,.06)}
+    .nav{display:flex;align-items:center;justify-content:space-between;height:64px}
+    .logo{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.5px}
+    .logo-badge{display:grid;place-items:center;width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,var(--brand),var(--brand-2));box-shadow:var(--shadow);}
+    nav ul{display:flex;gap:18px;list-style:none;margin:0;padding:0}
+    nav a{padding:10px 12px;border-radius:10px;color:#cbd5e1}
+    nav a:hover{background:rgba(255,255,255,.06);color:#fff}
+    .cta{display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,var(--brand),var(--brand-2));padding:10px 16px;border-radius:999px;color:#001018;font-weight:700;box-shadow:var(--shadow)}
+    .menu-btn{display:none}
+
+    /* Hero */
+    .hero{padding:72px 0 36px}
+    .hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:28px;align-items:center}
+    .badge{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(255,255,255,.12);color:#cbd5e1;padding:6px 10px;border-radius:999px;font-size:12px}
+    .title{font-size:clamp(28px,6vw,52px);line-height:1.05;margin:10px 0 14px}
+    .lead{color:#cbd5e1;font-size:clamp(14px,2.5vw,18px)}
+    .hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:20px}
+    .btn{display:inline-flex;align-items:center;gap:10px;padding:12px 16px;border-radius:12px;border:1px solid rgba(255,255,255,.12);color:#cffafe}
+    .btn:hover{background:rgba(255,255,255,.06)}
+    .btn.primary{border:none;background:linear-gradient(135deg,var(--brand),var(--brand-2));color:#001018;font-weight:800}
+    .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:24px}
+    .stat{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:14px;text-align:center}
+    .stat h4{margin:0;font-size:20px}
+    .stat p{margin:4px 0 0;color:#9ca3af;font-size:12px}
+    .hero-art{background:radial-gradient(1200px 600px at 100% 0%, rgba(34,211,238,.25), transparent 60%);} 
+    .laptop-card{background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:14px;box-shadow:var(--shadow)}
+
+    /* Produk */
+    section{padding:42px 0}
+    .section-head{display:flex;justify-content:space-between;align-items:end;gap:12px;margin-bottom:18px}
+    .section-head h2{margin:0;font-size:28px}
+    .muted{color:#94a3b8}
+    .tools{display:flex;gap:10px;flex-wrap:wrap}
+    .tools input,.tools select{background:#0f172a;border:1px solid rgba(255,255,255,.1);color:#e2e8f0;border-radius:12px;padding:10px 12px}
+    .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+    .card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:16px;overflow:hidden;display:flex;flex-direction:column}
+    .card .pic{aspect-ratio:4/3;background:linear-gradient(135deg,#0b1220, #0f172a);display:grid;place-items:center}
+    .chip{position:absolute;top:10px;left:10px;background:rgba(15,23,42,.8);border:1px solid rgba(255,255,255,.1);padding:6px 10px;border-radius:999px;font-size:12px}
+    .card h3{margin:12px 12px 2px;font-size:18px}
+    .price{margin:0 12px 8px;font-weight:800;color:#a5f3fc}
+    .meta{margin:0 12px 12px;color:#9ca3af;font-size:13px}
+    .card .actions{margin-top:auto;padding:12px;display:flex;gap:10px}
+    .card button{cursor:pointer;border:1px solid rgba(255,255,255,.12);background:#0f172a;color:#e2e8f0;padding:10px 12px;border-radius:12px;flex:1}
+    .card button.primary{background:linear-gradient(135deg,var(--brand),var(--brand-2));border:none;color:#001018;font-weight:800}
+
+    /* Keunggulan, Testimoni, CTA */
+    .tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .tile{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:16px}
+    .tile h4{margin:6px 0 8px}
+    .quote{background:linear-gradient(180deg,rgba(34,197,94,.1),rgba(34,197,94,.06));border:1px solid rgba(34,197,94,.2)}
+
+    /* Contact */
+    .contact{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+    form{display:grid;gap:10px}
+    input,textarea{background:#0f172a;border:1px solid rgba(255,255,255,.1);color:#e2e8f0;border-radius:12px;padding:10px 12px}
+    textarea{min-height:110px}
+
+    /* Footer */
+    footer{border-top:1px solid rgba(255,255,255,.06);padding:28px 0;color:#94a3b8}
+
+    /* Responsive */
+    @media (max-width:1024px){
+      .hero-grid{grid-template-columns:1fr}
+      .grid{grid-template-columns:repeat(2,1fr)}
+      .tiles{grid-template-columns:repeat(2,1fr)}
+      .contact{grid-template-columns:1fr}
+      nav ul{display:none}
+      .menu-btn{display:inline-flex;border:1px solid rgba(255,255,255,.1);padding:8px 10px;border-radius:10px;color:#cbd5e1}
+      .mobile-menu{display:none;flex-direction:column;gap:8px;padding:12px}
+      .mobile-menu a{padding:10px;border-radius:10px}
+      .mobile-menu a:hover{background:rgba(255,255,255,.06)}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <a class="logo" href="#">
+        <span class="logo-badge" aria-hidden="true">💻</span>
+        <span>arena39</span>
+      </a>
+      <nav aria-label="Navigasi utama">
+        <ul id="desktop-nav">
+          <li><a href="https://tokolaptopterpercaya.github.io/lazada/arena39.html">Produk</a></li>
+          <li><a href="#keunggulan">Keunggulan</a></li>
+          <li><a href="#testimoni">Testimoni</a></li>
+          <li><a href="https://tokolaptopterpercaya.github.io/lazada/arena39.html">Kontak</a></li>
+        </ul>
+      </nav>
+      <a class="cta" href="https://wa.me/6285959318325?text=Halo%20Arena39%2C%20saya%20ingin%20konsultasi%20laptop" target="_blank" rel="noopener">WhatsApp</a>
+      <button class="menu-btn" id="menuBtn" aria-label="Buka menu">☰</button>
+    </div>
+    <div class="container mobile-menu" id="mobileMenu" aria-label="Menu seluler">
+      <a href="https://tokolaptopterpercaya.github.io/lazada/arena39.html">Produk</a>
+      <a href="#keunggulan">Keunggulan</a>
+      <a href="#testimoni">Testimoni</a>
+      <a href="https://tokolaptopterpercaya.github.io/lazada/arena39.html">Kontak</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <span class="badge">Garansi Resmi • Konsultasi Gratis • Pengiriman Cepat</span>
+          <h1 class="title">Laptop Terbaik untuk <span style="background:linear-gradient(135deg,var(--brand),var(--brand-2));-webkit-background-clip:text;background-clip:text;color:transparent">Kerja, Kuliah, & Gaming</span></h1>
+          <p class="lead">Di <strong>Arena39</strong>, kami bantu Anda memilih laptop sesuai kebutuhan dan anggaran. Tersedia pilihan baru dan rekondisi, aksesoris lengkap, serta dukungan purna jual yang ramah.</p>
+          <div class="hero-actions">
+            <a class="btn primary" href="https://tokolaptopterpercaya.github.io/lazada/arena39.html">Lihat Katalog</a>
+            <a class="btn" href="https://tokolaptopterpercaya.github.io/lazada/arena39.html">Tanya Spesifikasi</a>
+          </div>
+          <div class="stats">
+            <div class="stat"><h4>1500+</h4><p>Pelanggan puas</p></div>
+            <div class="stat"><h4>30+</h4><p>Model ready</p></div>
+            <div class="stat"><h4>24/7</h4><p>Chat responsif</p></div>
+          </div>
+        </div>
+        <div class="hero-art">
+          <div class="laptop-card">
+            <img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?q=80&w=1400&auto=format&fit=crop" alt="Tampilan laptop modern di meja" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRODUK -->
+    <section id="produk">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Katalog Produk</h2>
+            <p class="muted">Harga dapat berubah sewaktu-waktu. Tanyakan stok untuk kepastian.</p>
+          </div>
+          <div class="tools" role="search">
+            <input id="search" type="search" placeholder="Cari: gaming, i5, 16GB, SSD…" aria-label="Cari produk" />
+            <select id="sort" aria-label="Urutkan">
+              <option value="popular">Paling populer</option>
+              <option value="low">Harga terendah</option>
+              <option value="high">Harga tertinggi</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="grid" id="grid">
+          <!-- Card 1 -->
+          <article class="card product-card" data-title="ASUS Vivobook 14 i5 16GB 512GB" data-price="9499000">
+            <div class="pic" style="position:relative">
+              <span class="chip">Baru</span>
+              <img alt="ASUS Vivobook 14" src="https://images.unsplash.com/photo-1517059224940-d4af9eec41e5?q=80&w=1200&auto=format&fit=crop" />
+            </div>
+            <h3>ASUS Vivobook 14</h3>
+            <p class="price">Rp 9.499.000</p>
+            <p class="meta">Intel® Core™ i5 • 16GB RAM • 512GB SSD • 14" FHD</p>
+            <div class="actions">
+              <button onclick="addToCart('ASUS Vivobook 14')">Tambah</button>
+              <button class="primary" onclick="chatWA('ASUS Vivobook 14')">Tanya</button>
+            </div>
+          </article>
+
+          <!-- Card 2 -->
+          <article class="card product-card" data-title="Lenovo IdeaPad 3 Ryzen5 8GB 512GB" data-price="7999000">
+            <div class="pic" style="position:relative">
+              <span class="chip">Hemat</span>
+              <img alt="Lenovo IdeaPad 3" src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?q=80&w=1200&auto=format&fit=crop" />
+            </div>
+            <h3>Lenovo IdeaPad 3</h3>
+            <p class="price">Rp 7.999.000</p>
+            <p class="meta">AMD Ryzen™ 5 • 8GB RAM • 512GB SSD • 15.6" FHD</p>
+            <div class="actions">
+              <button onclick="addToCart('Lenovo IdeaPad 3')">Tambah</button>
+              <button class="primary" onclick="chatWA('Lenovo IdeaPad 3')">Tanya</button>
+            </div>
+          </article>
+
+          <!-- Card 3 -->
+          <article class="card product-card" data-title="Acer Nitro 5 i7 16GB RTX3050" data-price="14999000">
+            <div class="pic" style="position:relative">
+              <span class="chip">Gaming</span>
+              <img alt="Acer Nitro 5" src="https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1200&auto=format&fit=crop" />
+            </div>
+            <h3>Acer Nitro 5</h3>
+            <p class="price">Rp 14.999.000</p>
+            <p class="meta">Intel® Core™ i7 • 16GB RAM • RTX 3050 • 15.6" 144Hz</p>
+            <div class="actions">
+              <button onclick="addToCart('Acer Nitro 5')">Tambah</button>
+              <button class="primary" onclick="chatWA('Acer Nitro 5')">Tanya</button>
+            </div>
+          </article>
+
+          <!-- Card 4 -->
+          <article class="card product-card" data-title="Apple MacBook Air M2 8GB 256GB" data-price="16999000">
+            <div class="pic" style="position:relative">
+              <span class="chip">Favorit</span>
+              <img alt="MacBook Air M2" src="https://images.unsplash.com/photo-1548611716-8c6fae99a8b0?q=80&w=1200&auto=format&fit=crop" />
+            </div>
+            <h3>MacBook Air M2</h3>
+            <p class="price">Rp 16.999.000</p>
+            <p class="meta">Apple M2 • 8GB RAM • 256GB SSD • 13.6" Liquid Retina</p>
+            <div class="actions">
+              <button onclick="addToCart('MacBook Air M2')">Tambah</button>
+              <button class="primary" onclick="chatWA('MacBook Air M2')">Tanya</button>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- KEUNGGULAN -->
+    <section id="keunggulan">
+      <div class="container">
+        <h2>Kenapa Belanja di Arena39?</h2>
+        <p class="muted">Kami fokus pada kualitas unit dan layanan purna jual.</p>
+        <div class="tiles" style="margin-top:14px">
+          <div class="tile">
+            <h4>Unit Bergaransi Resmi</h4>
+            <p>Kami hanya menjual unit resmi, lengkap dengan kartu garansi dan dukungan klaim yang mudah.</p>
+          </div>
+          <div class="tile">
+            <h4>Konsultasi Spesifikasi</h4>
+            <p>Gratis konsultasi untuk menentukan spek ideal sesuai pekerjaan, perkuliahan, atau gaming.</p>
+          </div>
+          <div class="tile">
+            <h4>Service & Upgrade</h4>
+            <p>Tersedia jasa upgrade RAM/SSD, bersih-bersih thermal, dan perbaikan ringan di toko.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONI -->
+    <section id="testimoni">
+      <div class="container">
+        <div class="section-head">
+          <h2>Apa Kata Mereka</h2>
+          <p class="muted">Umpan balik nyata dari pelanggan kami.</p>
+        </div>
+        <div class="tiles">
+          <blockquote class="tile quote">
+            <p>“Pelayanan ramah, dibantu pilih sesuai budget. Laptop dipakai kuliah lancar!”</p>
+            <p class="muted">— Nabila, Mahasiswi</p>
+          </blockquote>
+          <blockquote class="tile quote">
+            <p>“Gaming smooth. Settingan langsung dioptimalkan sama teknisinya. Mantap.”</p>
+            <p class="muted">— Bima, Gamer</p>
+          </blockquote>
+          <blockquote class="tile quote">
+            <p>“Pengiriman cepat dan packing aman. Rekomendasi toko laptop terpercaya.”</p>
+            <p class="muted">— Sari, Freelancer</p>
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <!-- KONTAK -->
+    <section id="kontak">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Lokasi & Kontak</h2>
+            <p class="muted">Silakan isi form atau hubungi kami langsung via WhatsApp.</p>
+          </div>
+        </div>
+        <div class="contact">
+          <form onsubmit="return sendForm(event)">
+            <input type="text" id="nama" placeholder="Nama" required>
+            <input type="tel" id="telp" placeholder="Nomor WhatsApp" required>
+            <textarea id="pesan" placeholder="Ceritakan kebutuhan Anda (kerja, kuliah, gaming, budget)"></textarea>
+            <button class="btn primary" type="submit">Kirim & Konsultasi</button>
+            <p class="muted">Atau chat langsung: <a href="https://wa.me/6285959318325" target="_blank" rel="noopener">wa.me/6285959318325</a></p>
+          </form>
+          <div>
+            <div class="tile" style="margin-bottom:12px">
+              <h4>Alamat Toko</h4>
+              <p>Jl. Contoh Raya No. 39, Kota Anda, Indonesia</p>
+              <p>Jam kerja: Senin–Sabtu 10.00–20.00</p>
+              <a class="btn" style="margin-top:8px;display:inline-flex" target="_blank" rel="noopener" 
+            </div>
+            <div class="tile">
+              <h4>Kontak</h4>
+              <p>Telp/WA: 08-5959-3183-25</p>
+              <p>Email: halo@arena39.co.id</p>
+              <p>Instagram: @arena39.store</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container" style="display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap">
+      <small>© <span id="year"></span> Arena39. All rights reserved.</small>
+      <small class="muted">Made with ❤️ by Arena39</small>
+    </div>
+  </footer>
+
+  <!-- JSON-LD Schema.org -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ElectronicsStore",
+    "name": "Arena39",
+    "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1200&auto=format&fit=crop",
+    "url": "https://arena39.example/",
+    "telephone": "+62-812-3456-7890",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Jl. Contoh Raya No. 39",
+      "addressLocality": "Kota Anda",
+      "addressRegion": "ID",
+      "postalCode": "12345",
+      "addressCountry": "ID"
+    },
+    "openingHours": ["Mo-Sa 10:00-20:00"],
+    "priceRange": "RpRpRp"
+  }
+  </script>
+
+  <script>
+    // Tahun dinamis
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Menu seluler
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    if (menuBtn) {
+      menuBtn.addEventListener('click', () => {
+        const shown = mobileMenu.style.display === 'flex';
+        mobileMenu.style.display = shown ? 'none' : 'flex';
+      });
+    }
+
+    // Pencarian & Sortir
+    const search = document.getElementById('search');
+    const sort = document.getElementById('sort');
+    const grid = document.getElementById('grid');
+
+    function applyFilterSort(){
+      const term = (search.value || '').toLowerCase();
+      const cards = Array.from(grid.querySelectorAll('.product-card'));
+      cards.forEach(c=>{
+        const match = c.dataset.title.toLowerCase().includes(term);
+        c.style.display = match ? '' : 'none';
+      });
+      const visible = cards.filter(c=>c.style.display!=='none');
+      visible.sort((a,b)=>{
+        const pa = +a.dataset.price, pb = +b.dataset.price;
+        if (sort.value==='low') return pa-pb;
+        if (sort.value==='high') return pb-pa;
+        return 0;
+      }).forEach(c=>grid.appendChild(c));
+    }
+    search.addEventListener('input', applyFilterSort);
+    sort.addEventListener('change', applyFilterSort);
+
+    // Keranjang sederhana (placeholder)
+    let cartCount = 0;
+    function addToCart(name){
+      cartCount++; 
+      alert(`Ditambahkan: ${name}. (Keranjang: ${cartCount})`);
+    }
+    window.addToCart = addToCart;
+
+    // Chat WhatsApp cepat
+    function chatWA(product){
+      const to = '6285959318325'; // ganti dengan nomor WA toko
+      const msg = encodeURIComponent(`Halo Arena39, saya tertarik dengan ${product}. Masih tersedia?`);
+      window.open(`https://wa.me/${to}?text=${msg}`, '_blank');
+    }
+    window.chatWA = chatWA;
+
+    // Form to WA
+    function sendForm(e){
+      e.preventDefault();
+      const to = '6285959318325'; // ganti dengan nomor WA toko
+      const nama = document.getElementById('nama').value.trim();
+      const telp = document.getElementById('telp').value.trim();
+      const pesan = document.getElementById('pesan').value.trim();
+      const text = encodeURIComponent(`Halo Arena39, saya ${nama} (WA: ${telp}).\n${pesan || 'Saya ingin konsultasi pilihan laptop.'}`);
+      window.open(`https://wa.me/${to}?text=${text}`, '_blank');
+      return false;
+    }
+    window.sendForm = sendForm;
+  </script>
+</body>
+</html>
